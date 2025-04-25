@@ -1,30 +1,87 @@
 import React from "react";
-import Buoi1 from "./BaiTap/Buoi1";
-import Buoi2 from "./BaiTap/Buoi2";
 import Home from "./BaiTap/Home";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Buoi3 from "./BaiTap/Buoi3";
-import { Register } from "./BaiTap/Register";
-import { ForgotPassword } from "./BaiTap/ForgotPassword";
+import { Register } from "./BaiTap/Buoi3/Register";
+import { ForgotPassword } from "./BaiTap/Buoi3/ForgotPassword";
+import Lab1 from "./BaiTap/Buoi1/Lab1";
+import Lab2 from "./BaiTap/Buoi2/Lab2";
+import Lab3 from "./BaiTap/Buoi3/Lab3";
+import Lab4 from "./BaiTap/Buoi4/Lab4";
+import Detail from "./BaiTap/Buoi4/Detail";
+import { Provider as PaperProvider } from "react-native-paper";
+import CustomNavigationBar from "./BaiTap/Buoi4/CustomNavigationBar";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          options={{ headerShown: false }}
-          component={Home}
-        />
-        <Stack.Screen name="buoi1" component={Buoi1} />
-        <Stack.Screen name="buoi2" component={Buoi2} />
-        <Stack.Screen name="buoi3" component={Buoi3} />
-        <Stack.Screen name="register" component={Register} />
-        <Stack.Screen name="forgot" component={ForgotPassword} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <PaperProvider>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen
+            name="Home"
+            options={{ headerShown: false }}
+            component={Home}
+          />
+          <Stack.Screen name="buoi1" component={Buoi1Navigation} />
+          <Stack.Screen name="buoi2" component={Buoi2Navigation} />
+          <Stack.Screen name="buoi3" component={Buoi3Navigation} />
+          <Stack.Screen name="buoi4" component={Buoi4Navigation} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
+
+const Buoi1Navigation = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: true }}>
+      <Stack.Screen
+        name="Lab1"
+        component={Lab1}
+        options={{ title: "Bài tập buổi 1" }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const Buoi2Navigation = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: true }}>
+      <Stack.Screen
+        name="Lab2"
+        component={Lab2}
+        options={{ title: "Bài tập buổi 2" }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const Buoi3Navigation = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: true }}>
+      <Stack.Screen
+        name="Lab3"
+        component={Lab3}
+        options={{ title: "Bài tập buổi 3" }}
+      />
+      <Stack.Screen name="register" component={Register} />
+      <Stack.Screen name="forgot" component={ForgotPassword} />
+    </Stack.Navigator>
+  );
+};
+
+const Buoi4Navigation = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="Lab4"
+      screenOptions={{
+        header: (prop) => <CustomNavigationBar {...prop} />,
+      }}
+    >
+      <Stack.Screen name="Lab4" component={Lab4} />
+      <Stack.Screen name="detail" component={Detail} />
+    </Stack.Navigator>
+  );
+};

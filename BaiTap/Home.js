@@ -23,6 +23,12 @@ const Home = ({ navigation }) => {
       >
         <Text style={styles.text}>Bài tập buổi 3</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate("buoi4")}
+      >
+        <Text style={styles.text}>Bài tập buổi 4</Text>
+      </TouchableOpacity>
     </View>
   );
 };

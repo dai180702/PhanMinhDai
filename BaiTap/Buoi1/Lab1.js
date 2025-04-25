@@ -26,7 +26,7 @@ const Cat = (props) => {
   );
 };
 
-const Buoi1 = () => {
+const Lab1 = () => {
   return (
     <>
       <View style={styles.container}>
@@ -39,7 +39,7 @@ const Buoi1 = () => {
   );
 };
 
-export default Buoi1;
+export default Lab1;
 
 const styles = StyleSheet.create({
   container: {

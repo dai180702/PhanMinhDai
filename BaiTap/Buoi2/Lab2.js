@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 
-const Buoi2 = () => {
+const Lab2 = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -70,7 +70,7 @@ const Buoi2 = () => {
   );
 };
 
-export default Buoi2;
+export default Lab2;
 
 const styles = StyleSheet.create({
   background: {

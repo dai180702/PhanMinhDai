@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useNavigation } from "@react-navigation/native";
 
-const Buoi3 = () => {
+const Lab3 = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -40,7 +40,7 @@ const Buoi3 = () => {
 
   return (
     <View style={styles.container}>
-      <Image source={require("../image/fire.png")} style={styles.logo} />
+      <Image source={require("../../image/fire.png")} style={styles.logo} />
       <Text style={styles.title}>Wellcome Back!</Text>
       <View style={styles.inputContainer}>
         <Icon name="envelope" size={20} style={styles.inputIcon} />
@@ -52,6 +52,7 @@ const Buoi3 = () => {
         />
       </View>
       {errors.email && <Text style={styles.errorText}>{errors.email}</Text>}
+      
       <View style={styles.inputContainer}>
         <Icon name="lock" size={20} style={styles.inputIcon} />
         <TextInput
@@ -155,4 +156,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Buoi3;
+export default Lab3;
