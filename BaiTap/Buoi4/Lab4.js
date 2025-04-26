@@ -1,16 +1,20 @@
-import { View, Text, StyleSheet, Button } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, Button } from "react-native";
+import React from "react";
 
-const Lab4 = ({navigation}) => {
+const Lab4 = ({ navigation }) => {
   return (
     <View style={styles.container}>
-     <Text>Home Screen</Text>
-     <Button mode="contained" onPress={() => navigation.navigate("detail")} title="Details" />
+      <Text style={styles.text}>Home Screen</Text>
+      <Button
+        mode="contained"
+        onPress={() => navigation.navigate("detail")}
+        title="Details"
+      />
     </View>
-  )
-}
+  );
+};
 
-export default Lab4
+export default Lab4;
 
 const styles = StyleSheet.create({
   container: {
@@ -19,4 +23,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
+  text: {
+    fontSize: 20,
+    marginBottom: 10,
+    fontWeight: "bold",
+  },
 });

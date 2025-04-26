@@ -7,10 +7,9 @@ import { ForgotPassword } from "./BaiTap/Buoi3/ForgotPassword";
 import Lab1 from "./BaiTap/Buoi1/Lab1";
 import Lab2 from "./BaiTap/Buoi2/Lab2";
 import Lab3 from "./BaiTap/Buoi3/Lab3";
-import Lab4 from "./BaiTap/Buoi4/Lab4";
 import Detail from "./BaiTap/Buoi4/Detail";
 import { Provider as PaperProvider } from "react-native-paper";
-import CustomNavigationBar from "./BaiTap/Buoi4/CustomNavigationBar";
+import DrawerNavigator from "./BaiTap/Buoi4/DrawerNavigator";
 
 const Stack = createNativeStackNavigator();
 
@@ -74,13 +73,8 @@ const Buoi3Navigation = () => {
 
 const Buoi4Navigation = () => {
   return (
-    <Stack.Navigator
-      initialRouteName="Lab4"
-      screenOptions={{
-        header: (prop) => <CustomNavigationBar {...prop} />,
-      }}
-    >
-      <Stack.Screen name="Lab4" component={Lab4} />
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Lab4" component={DrawerNavigator} />
       <Stack.Screen name="detail" component={Detail} />
     </Stack.Navigator>
   );

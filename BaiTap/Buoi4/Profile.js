@@ -4,7 +4,7 @@ import React from "react";
 const Profile = () => {
   return (
     <View style={styles.container}>
-      <Text variant="displayLarge">Profile Screen</Text>
+      <Text variant="displayLarge" style={styles.text}>Phan Minh Đại</Text>
     </View>
   );
 };
@@ -17,4 +17,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  text: {
+    fontSize: 20,
+  }
 });

@@ -4,6 +4,8 @@ import Profile from "./Profile";
 import Detail from "./Detail";
 import Lab4 from "./Lab4";
 import CustomDrawerBar from "./CustomDrawerBar";
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
 
 const Drawer = createDrawerNavigator();
 
