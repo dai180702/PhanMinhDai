@@ -10,6 +10,9 @@ import Lab3 from "./BaiTap/Buoi3/Lab3";
 import Detail from "./BaiTap/Buoi4/Detail";
 import { Provider as PaperProvider } from "react-native-paper";
 import DrawerNavigator from "./BaiTap/Buoi4/DrawerNavigator";
+import Login from "./BaiTap/Buoi5/Login";
+import RegisterBuoi5 from "./BaiTap/Buoi5/RegisterBuoi5";
+import TodoScreen from "./BaiTap/Buoi5/TodoScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +30,7 @@ export default function App() {
           <Stack.Screen name="buoi2" component={Buoi2Navigation} />
           <Stack.Screen name="buoi3" component={Buoi3Navigation} />
           <Stack.Screen name="buoi4" component={Buoi4Navigation} />
+          <Stack.Screen name="buoi5" component={Buoi5Navigation} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
@@ -76,6 +80,16 @@ const Buoi4Navigation = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Lab4" component={DrawerNavigator} />
       <Stack.Screen name="detail" component={Detail} />
+    </Stack.Navigator>
+  );
+};
+
+const Buoi5Navigation = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="login" component={Login} />
+      <Stack.Screen name="Register" component={RegisterBuoi5} />
+      <Stack.Screen name="TodoScreen" component={TodoScreen} />
     </Stack.Navigator>
   );
 };
